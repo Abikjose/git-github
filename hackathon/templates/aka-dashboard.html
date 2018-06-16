@@ -1,0 +1,146 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+#<!-- <<< Created by akarsh.p [OCC Team] >>> -->
+print "Content-Type: text/html"
+print ""
+import os
+import MySQLdb
+import cgi, cgitb
+import smtplib, sys
+cgitb.enable()
+form=cgi.FieldStorage()
+dat=form.getvalue('date')
+shft=form.getvalue('shift')
+comp=form.getvalue('components')
+desc=form.getvalue('description')
+comm=form.getvalue('comments')
+import os
+ev0= os.getenv('HOST_name')
+ev1=os.getenv('HOST_db')
+ev2=os.getenv('HOST_passwd')
+ev3=os.getenv('HOST_user')
+#print l3
+#conn=MySQLdb.connect(host="localhost",user="root",passwd="Password@123",db="shift")
+#conn=MySQLdb.connect(host="10.200.6.167",user="root",passwd="root",db="shift",port=3306)
+conn=MySQLdb.connect(host=ev0,user=ev3,passwd=ev2,db=ev1,port=3306)
+a=conn.cursor()
+try:
+    
+        if len(shft)==3:
+                a.execute("SELECT * FROM details WHERE Date= %s",(dat))
+                results = a.fetchall()
+                print ("""
+                <html lang="en">
+                <head>
+                <title> Details </title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                </head>
+                <body>
+                
+                <div style="margin-top:10px">
+<!--                <nav class="navbar navbar-inverse">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <a class="navbar-brand" href="#">OCC</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                      <li><a href="http://occ.corp.olacabs.com/url.html">Dashboard</a></li>
+                      <li><a href="http://occ.corp.olacabs.com/add.html">Shift Handover</a></li>
+                      <li><a href="http://occ.corp.olacabs.com/outage.html">Outage Communication</a></li>
+                    </ul>
+                    </div>
+                </nav> -->
+                </div>
+                <div class="container">
+                <table class="table">
+                <thead>
+                <tr>
+                        <th>Date: </th>
+                        <th>Shift: </th>
+                        <th>Component: </th>
+                        <th>Description: </th>
+                        <th>Comments: </th>
+                        <th>Start Time: </th>
+                        <th>End Time: </th>
+                </tr>
+                </thead>
+                <tbody>
+                """)
+                for row in results:
+                        print (
+                        """
+                        <tr>
+                                <td> {0}</td>
+                                <td> {1}</td>
+                                <td> {2}</td>
+                                <td> {3}</td>
+                                <td> {4}</td>
+                                <td> {5}</td>
+                                <td> {6}</td>
+                        </tr>"""
+                        ).format(row[0],row[1],row[2],row[3],row[4],row[5],row[6])
+                print '<br />'
+                """
+                </tbody>
+                </table>
+                </div>
+                </body>
+                </html>
+                """
+        else:
+                a.execute("SELECT * FROM details WHERE Date= %s AND Shift= %s",(dat, shft))
+                results = a.fetchall()
+                print ("""
+                <html lang="en">
+                <head>
+                <title> Details </title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                </head>
+                <body>
+                <div class="container">
+                <table class="table">
+                <thead>
+                <tr>
+                        <th>Date: </th>
+                        <th>Shift: </th>
+                        <th>Component: </th>
+                        <th>Description: </th>
+                        <th>Comments: </th>
+                        <th>Start Time: </th>
+                        <th>End Time: </th>
+                </tr>
+                </thead>
+                <tbody>
+                """)
+                for row in results:
+                        print (
+                        """
+                        <tr>
+                                <td> {0}</td>
+                                <td> {1}</td>
+                                <td> {2}</td>
+                                <td> {3}</td>
+                                <td> {4}</td>
+                                <td> {5}</td>
+                                <td> {6}</td>
+                        </tr>"""
+                        ).format(row[0],row[1],row[2],row[3],row[4],row[5],row[6])
+                print '<br />'
+                """
+                </tbody>
+                </table>
+                </div>
+                </body>
+                </html>
+                """
+except:
+    conn.rollback()
+conn.close()

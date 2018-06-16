@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Access Request</title>
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script>
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+</head>
+
+<body>
+<style>
+
+p {
+background-color: #d5f4e6;
+}
+body {
+background-color: lightblue;
+}
+</style>
+<div class="container">
+  <h2>Jump Server access</h2>
+   <p>"Enter SSH public key and select manager from drop down menu for approval process"</p>
+ <div class="form-group">
+  <form action="/cgi-bin/aka.py">
+Enter IAM username:<br>
+<input type="text" name="iamusername">
+<pre> </pre>
+<label for="comment">SSH public key:</label>
+  <textarea class="form-control" rows="5" id="comment" name="key"></textarea>
+
+</div>
+  <select name="mgr">
+  <option value="akarsh.pattani@olacabs.com">Akarsh</option>
+  <option value="vibhav.chary@olacabs.com">Vibhav Chary</option>
+  <option value="abhinav.gupt">Abhinav</option>
+  <option value="sanjay">Sanjay</option>
+  <option value="sreejith">Sreejith</option>
+  </select>
+
+<input type="submit" class="btn btn-info" value="Create JIRA">
+ </form>
+
+</body>
+
+<hr size=8>
+
+</html>

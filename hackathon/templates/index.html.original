@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+
+ <link href="assets/css/toolkit-inverse.css" rel="stylesheet">
+
+
+      <link href="assets/css/docs.css" rel="stylesheet">
+
+    <link href="assets/css/application.css" rel="stylesheet">
+    <style>
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+
+a.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 750px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  display: run-in;
+  
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+p {
+  font-size:30px;
+  color:white;
+  text-align:center
+
+}
+
+    </style>
+
+  </head>
+
+
+  <body class="with-top-navbar">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid container-fluid-spacious">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-emphasized" href="index.html">
+          <span class="icon icon-leaf navbar-brand-icon"></span>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li >
+            <a href="index.html">Access request</a>
+          </li>
+          <li>
+            <a href="http://10.200.6.167/cgi-bin/dashboard_access.py">JIRA status</a>
+          </li>
+               <li>
+            <a href="knowledge.html">Knowledge base</a>
+          </li>
+          <li >
+            <a href="overview.html">Overview</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<br><br>
+<p>Which access do you require?</p>
+
+ <div style="text-align:center">
+   <br><br><br>
+        <div class="btn-group" >
+          <a href="awsiam/aws.html" class="button"><span>AWS Console</span></a>
+            <a href="awsiam/awsjump.html" class="button"><span>Jump</span></a>
+            <a href="awsiam/awsopsworks.html" class="button"><span>Opsworks Stacks</span></a>
+            <a href="orch/orchestrator.html" class="button"><span>Orchestrator</span></a>
+            <a href="newrelic/newrelic.html" class="button"><span>Newrelic</span></a>
+            <a href="rstudio/rstudio.html" class="button" style="position: center"><span>RStudio</span></a>
+            <a href="rstudio/mysqljump.html" class="button"><span>MySQL Jump</span></a>
+        </div>
+    </div>
+</body>
+<head>
+ <style type ="text/css" >
+   .footer{
+       position: fixed;
+       text-align: center;
+       bottom: 100px;
+       width: 100%;
+   }
+</style>
+</head>
+<body>
+<div class="footer"><marquee scrollamount="10"><h2>Mobile: 7090744008 | Hangout & Slack : occ |  Email: occ@olacabs.com | <a href="https://docs.google.com/a/olacabs.com/forms/d/e/1FAIpQLSe94iFHs9dqkIrUlYsOoWMHSdvQEg7HyIeq4MnQKZSNpclUwA/viewform" target="_blank">Feedback</a> | Escalation: vibhav.chary@olacabs.com(7022045947)</h2></marquee></div>
+</body>
+</html>

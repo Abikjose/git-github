@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+
+ <link href="../assets/css/toolkit-inverse.css" rel="stylesheet">
+
+
+      <link href="../assets/css/docs.css" rel="stylesheet">
+
+    <link href="../assets/css/application.css" rel="stylesheet">
+
+    <style>
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+
+      h2 {
+        .pos-a { position: absolute !important; }
+      }
+
+      select {
+    color: #9e9e9e;
+    position:absolute;
+    left:165px;
+}
+option:not(:first-of-type) {
+    color: black;
+}
+.myiam {
+   font-size: 20px;
+   color: black;
+}
+
+.ribbon {
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   width: 50%;
+}
+
+.logoutLblPos{
+
+   position:fixed;
+   right:10px;
+   top:5px;
+}
+
+
+
+    </style>
+  </head>
+
+
+
+<body class="with-top-navbar">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid container-fluid-spacious">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-emphasized" href="../index.html">
+          <span class="icon icon-leaf navbar-brand-icon"></span>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li >
+            <a href="../index.html">Access request</a>
+          </li>
+          <li>
+            <a href="../jirastatus.html">JIRA status</a>
+          </li>
+               <li>
+            <a href="../knowledge.html">Knowledge base</a>
+          </li>
+          <li >
+            <a href="../overview.html">Overview</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+              <form align="right" name="form1" method="post" action="log_out.php">
+  <label class="logoutLblPos">
+  <input name="submit2" type="submit" id="submit2" value="log out">
+  </label>
+</form>
+
+
+<div class="container">
+
+   <br><br>
+ <h2>
+  <label for="AWS Console Access">AWS Console Access</label>
+</h2>
+
+
+
+<p>If you want to Create IAM username in AWS, please use below</p>
+
+<br><br>
+<form action="/cgi-bin/iam_access.py">
+  IAM username:
+  <input type="text" name="iamusername" value="" class="myiam" required >
+  <br><br><br>
+      <select required name="manager">
+         <option value="">Choose Manager</option>
+  <option value="akarsh.pattani@olacabs.com">Akarsh</option>
+  <option value="vibhav.chary@olacabs.com">Vibhav Chary</option>
+  <option value="abhinav.gupta@olacabs.com">Abhinav Gupta</option>
+</select>
+  <br><br>
+  <span style="position:absolute; left:165px;">
+<br><input type="submit" class="btn btn-info" value="Create JIRA">
+</span>
+</form>
+</div>
+</div>
+<div id="content">
+    <img src="../images/awsIAMroles-1024x580.png" class="ribbon"/>
+</div>
+
+
+</body>
+
+
+</html>
