@@ -2,9 +2,10 @@
 <html>
   <head>
     <title>Know Your Artists</title>
-    <link rel="stylesheet" href= "../static/css/base.css" >
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/base.css') }}" >
+    <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/bootstrap.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static', filename = 'css/bootstrap-grid.css') }}" >
   </head>
   <body>
 
@@ -19,9 +20,42 @@
    </nav>
 
       <div class="know">
-     <h1>Me?</h1>
-     <p>Vivek Unni aka Unnibraw!</p><p> Vivek was born and bought up in Kannur, Kerala in India. He's a born artist.</p>
-   <img id='img_know' src="../static/images/vivek.jpg" alt="Image not found"/>
+
+<div class="row">
+<div class="col-lg-6">
+  <img id='img_know' src="{{ url_for('static', filename = 'images/vivek.jpg') }}" alt="Image not found"/>
+</div>
+<div class="col-lg-6 boxy">
+  <h1>Me?</h1>
+  <p>Vivek Unni aka Unnibraw! Vivek was born and bought up in Kannur, Kerala in
+    India. He's a born artist. He has worked both as a freelancer and a fulltime
+    employee. It is hard to miss his designs and creations, since they've taken
+    over all the shops and restruants in India. Yes! This is the guy behind the
+    "Zeta" logos you see around your town.</p>
+
+  <p>This fun loving fellow, through his life, preaches that creativity is not a
+    formula that you can learn from any proffessional college, but it is something
+    that is your own brainchild, which has to come from you. He hasn't been to any
+    #1 colleges yet, his designs challenges the pioneers in the field.</p>
+
+</div>
+</div>
+</div><br>
+   <div class="gig">
+     <div class="row">
+     <div class="col-lg-6 boxy">
+       <h1>Gigs</h1>
+       <li class= "gigs"> Kochi</li><br>
+       <p>He started working as a freelancer in Kochi</p>
+       <li class= "gigs"> Bangalore</li><br>
+       <p>Joined XXX in Bangalore and worked with the company for 2 years</p>
+       <li class= "gigs"> Mumbai</li><br>
+       <p>Moved to Mumbai as a designer for Zeta</p>
+     </div>
+     <div class="col-lg-6">
+       <img id='img_gig' src="{{ url_for('static', filename = 'images/vivek_black.jpg" alt="Image not found"/>
+     </div>
+     </div>
    </div>
 </body>
 </html>

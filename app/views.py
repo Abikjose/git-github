@@ -23,3 +23,7 @@ def js():
 @app.route('/vivek')
 def vivek():
     return render_template('vivek.html')
+
+@app.route('/artists.html')
+def artists():
+    return render_template('artists.html')
